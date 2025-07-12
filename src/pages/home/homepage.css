@@ -1,0 +1,145 @@
+/* --------------------------------------------
+   FUENTE PERSONALIZADA
+-------------------------------------------- */
+@font-face {
+  font-family: "Calistonga";
+  src: url("/fonts/Calistoga-Regular.ttf") format("truetype");
+  font-display: swap;
+}
+
+/* --------------------------------------------
+   CONTENEDOR PRINCIPAL
+-------------------------------------------- */
+.homepage-wrapper {
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+  background-color: #2f2f2f;
+  overflow-x: hidden;
+}
+
+.homepage-container {
+  display: flex;
+  flex-direction: column;
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 2rem;
+  gap: 50px;
+  color: white;
+}
+
+/* --------------------------------------------
+   SECCIÓN HERO / PRESENTACIÓN
+-------------------------------------------- */
+.homepage-hero {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  flex-wrap: wrap;
+  gap: 3rem;
+}
+
+.description {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  max-width: 650px;
+  gap: 3rem;
+  min-height: 590px;
+}
+
+.description h1 {
+  font-size: clamp(2rem, 5vw, 4rem);
+  font-family: "Calistonga", serif;
+  font-weight: 100;
+  letter-spacing: 0.4em;
+  margin: 0;
+  padding: 0;
+  color: white;
+}
+
+.description p {
+  font-size: clamp(1.25rem, 2.5vw, 2rem);
+  font-family: Roboto, sans-serif;
+  line-height: 1.5;
+  margin: 0;
+  padding: 0;
+  max-width: 100%;
+}
+
+/* --------------------------------------------
+   BOTÓN CTA ("Call to Action")
+-------------------------------------------- */
+.cta-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.6rem;
+
+  width: 280px;
+  height: 70px;
+
+  font-size: 1.5rem;
+  font-family: Roboto, sans-serif;
+  font-weight: 700;
+  text-decoration: none;
+
+  background-color: #efe9d3;
+  color: #2f2f2f;
+  border: none;
+  border-radius: 15px;
+
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.cta-button:hover {
+  background-color: #2f2f2f;
+  color: #efe9d3;
+  border: 2px solid #efe9d3;
+  transform: scale(1.03);
+}
+
+/* --------------------------------------------
+   DECORACIÓN ONDULADA INFERIOR
+-------------------------------------------- */
+.bottom-wave {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 160px;
+  transform: rotate(180deg);
+}
+
+/* --------------------------------------------
+   RESPONSIVE
+-------------------------------------------- */
+@media (max-width: 768px) {
+
+  .homepage-hero {
+    width: 100%;
+    gap: 0;
+  }
+
+  .description {
+    min-height: 0px;
+    height: 400px;
+    max-height: 400px;
+    width: 100%;
+    max-width: 100%;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+  }
+
+  .homepage-wrapper {
+    padding-bottom: 130px;
+  }
+}
+
+@media (max-width: 480px) {
+
+}

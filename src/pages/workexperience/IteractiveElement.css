@@ -1,0 +1,292 @@
+
+
+/* ==========================================================================
+   BOTÓN INTERACTIVO PRINCIPAL
+========================================================================== */
+
+.ie-btn {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 590px;
+  height: 86px;
+  padding: 0 20px;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  font-family: Roboto;
+  font-size: 30px;
+  color: white;
+  transition: all 0.4s ease;
+  box-sizing: content-box;
+  overflow: hidden;
+  position: relative;
+}
+
+/* Estado de botón abierto (colapsado a ícono) */
+.ie-open {
+  width: 100px;
+  height: 90px;
+  border-radius: 8px 8px 0 0;
+  justify-content: center;
+}
+
+
+/* ==========================================================================
+   TEXTO DEL BOTÓN
+========================================================================== */
+
+.ie-text {
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.ie-fade-out {
+  opacity: 0;
+  transform: translateX(-10px);
+  pointer-events: none;
+}
+
+.ie-fade-in {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+
+/* ==========================================================================
+   ÍCONO DEL BOTÓN
+========================================================================== */
+
+.ie-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+}
+
+.ie-icon-normal {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+}
+
+.ie-icon-slide-up {
+  animation: ie-slide-up-fade-in 0.4s ease forwards;
+}
+
+/* Animación al expandir ícono */
+@keyframes ie-slide-up-fade-in {
+  from {
+    opacity: 0;
+    transform: translateY(20px) scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1.2);
+  }
+}
+
+
+/* ==========================================================================
+   CONTENIDO EXPANDIBLE
+========================================================================== */
+
+.ie-content-wrapper {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.5s ease;
+  border-radius: 0 8px 8px 8px;
+}
+
+.ie-expand {
+  max-height: 1000px;
+}
+
+.ie-content {
+  padding: 16px;
+  width: 600px;
+  max-width: 600px;
+  border-radius: 0 8px 8px 8px;
+  opacity: 0;
+  animation: ie-fade-in-content 0.5s ease 0.3s forwards;
+}
+
+@keyframes ie-fade-in-content {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+
+/* ==========================================================================
+   LISTAS INTERNAS DEL CONTENIDO
+========================================================================== */
+
+.ie-content ul {
+  padding-left: 50px;
+  padding-right: 50px;
+}
+
+.ie-content ul ul {
+  padding-left: 20px;
+}
+
+.ie-content li {
+  line-height: 1.5;
+  text-align: start;
+  font-size: 30px;
+  font-family: Roboto;
+  color: white;
+}
+
+
+/* ==========================================================================
+   COLORES BASE (ASIGNADOS POR TIPO DE ELEMENTO)
+========================================================================== */
+
+.bg-GestióndeVehículos      { background-color: #3F5E6C; }
+.bg-GestióndeClientes       { background-color: #39536B; }
+.bg-GestióndeVentas         { background-color: #1F6287; }
+.bg-Creacióndebasededatos   { background-color: #1F6384; }
+.bg-GestióndeUsuarios       { background-color: #2D618E; }
+.bg-GestióndeProductos      { background-color: #255992; }
+
+
+/* ==========================================================================
+   HOVER (CUANDO BOTÓN ESTÁ CERRADO)
+========================================================================== */
+
+.ie-btn:hover.bg-GestióndeVehículos       { background-color: #588296; }
+.ie-btn:hover.bg-GestióndeClientes        { background-color: #4f7394; }
+.ie-btn:hover.bg-GestióndeVentas          { background-color: #3d7a9b; }
+.ie-btn:hover.bg-Creacióndebasededatos    { background-color: #2e7599; }
+.ie-btn:hover.bg-GestióndeUsuarios        { background-color: #417fb4; }
+.ie-btn:hover.bg-GestióndeProductos       { background-color: #366394; }
+
+
+/* ==========================================================================
+   HOVER (CUANDO BOTÓN ESTÁ ABIERTO)
+   Agrega resplandor suave desde el centro (overlay radial)
+========================================================================== */
+
+.ie-btn:hover.ie-open.bg-GestióndeVehículos {
+  background-color: #3F5E6C;
+  background-image: radial-gradient(circle at center, rgba(255, 255, 255, 0.15), transparent 70%);
+  background-blend-mode: overlay;
+}
+
+.ie-btn:hover.ie-open.bg-GestióndeClientes {
+  background-color: #39536B;
+  background-image: radial-gradient(circle at center, rgba(255, 255, 255, 0.15), transparent 70%);
+  background-blend-mode: overlay;
+}
+
+.ie-btn:hover.ie-open.bg-GestióndeVentas {
+  background-color: #1F6287;
+  background-image: radial-gradient(circle at center, rgba(255, 255, 255, 0.15), transparent 70%);
+  background-blend-mode: overlay;
+}
+
+.ie-btn:hover.ie-open.bg-Creacióndebasededatos {
+  background-color: #1F6384;
+  background-image: radial-gradient(circle at center, rgba(255, 255, 255, 0.15), transparent 70%);
+  background-blend-mode: overlay;
+}
+
+.ie-btn:hover.ie-open.bg-GestióndeUsuarios {
+  background-color: #2D618E;
+  background-image: radial-gradient(circle at center, rgba(255, 255, 255, 0.15), transparent 70%);
+  background-blend-mode: overlay;
+}
+
+.ie-btn:hover.ie-open.bg-GestióndeProductos {
+  background-color: #255992;
+  background-image: radial-gradient(circle at center, rgba(255, 255, 255, 0.15), transparent 70%);
+  background-blend-mode: overlay;
+}
+
+
+/* ==========================================================================
+   HOVER ICONO: ANIMACIÓN REBOTE CONTINUO
+========================================================================== */
+
+.ie-btn:hover.ie-open .ie-icon.ie-icon-slide-up {
+  animation: bounceUpDown 0.6s ease-in-out infinite;
+}
+
+@keyframes bounceUpDown {
+  0%, 100% {
+    transform: translateY(0) scale(1.2);
+  }
+  50% {
+    transform: translateY(-8px) scale(1.2);
+  }
+}
+
+/* ==========================================================================
+   Resposividad 
+========================================================================== */
+
+/* Para tablets y pantallas medianas (≤ 768px) */
+@media (max-width: 768px) {
+  .ie-btn {
+    width: 100%;
+    font-size: 24px;
+    padding: 0 16px;
+  }
+
+  .ie-content {
+    width: 100%;
+    padding: 12px;
+    font-size: 24px;
+  }
+
+  .ie-content ul {
+    padding-left: 30px;
+    padding-right: 30px;
+  }
+
+  .ie-content li {
+    font-size: 24px;
+  }
+  .ie-icon.ie-icon-slide-up {
+    animation:  0.4s ease forwards;
+    transform: scale(0.9);
+  }
+}
+
+/* Para móviles (≤ 480px) */
+@media (max-width: 480px) {
+  .ie-btn {
+    height: 72px;
+    font-size: 20px;
+    padding: 0 12px;
+  }
+
+  .ie-content {
+    padding: 10px;
+    font-size: 20px;
+  }
+
+  .ie-content ul {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+
+  .ie-content li {
+    font-size: 20px;
+  }
+
+  .ie-open {
+    width: 80px;
+    height: 80px;
+  }
+
+  .ie-icon-slide-up {
+    animation: 0.4s ease forwards;
+    transform: scale(0.9);
+  }
+}

@@ -1,0 +1,186 @@
+/* --------------------------------------------
+   FUENTE PERSONALIZADA
+-------------------------------------------- */
+@font-face {
+  font-family: "GideonRoman";
+  src: url("/fonts/GideonRoman-Regular.ttf") format('truetype');
+  font-display: swap; 
+}
+
+/* --------------------------------------------
+   LAYOUT GENERAL DEL COMPONENTE
+-------------------------------------------- */
+.wrapper {
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+  background-color: #EFE9D3; 
+}
+
+/* Contenedor principal centrado con padding */
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 50px;
+
+  max-width: 1280px;
+  margin: 0 auto;              
+  padding: 0 2rem 2rem;         
+
+  text-align: center;
+  color: black;
+}
+
+/* --------------------------------------------
+   TÍTULO PRINCIPAL CON DECORACIÓN
+-------------------------------------------- */
+.title {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+
+.title h2 {
+  font-family: Roboto;
+  font-weight: 100;
+  font-size: 40px;
+  text-decoration: underline;
+  text-decoration-thickness: 2px;
+  text-underline-offset: 10px;
+}
+
+/* --------------------------------------------
+   ANIMACIONES DE ROTACIÓN CON PAUSA
+   (Ideal para íconos decorativos o SVGs)
+-------------------------------------------- */
+@keyframes rotatePauseClockwise {
+  0% { transform: rotate(0deg); }
+  40% { transform: rotate(360deg); }
+  100% { transform: rotate(360deg); }
+}
+
+@keyframes rotatePauseCounterClockwise {
+  0% { transform: rotate(0deg); }
+  40% { transform: rotate(-360deg); }
+  100% { transform: rotate(-360deg); }
+}
+
+.rotateClockwise {
+  animation: rotatePauseClockwise 2s ease-in-out 300ms infinite;
+}
+
+.rotateCounter {
+  animation: rotatePauseCounterClockwise 2s ease-in-out 300ms infinite;
+}
+
+/* --------------------------------------------
+   NAVEGACIÓN / LINKS FECHAS Y ANIMACIÓN
+-------------------------------------------- */
+.dateLink {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.link {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+
+  font-family: "GideonRoman";
+  font-size: 25px;
+  color: #053265;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+/* Texto dentro del link con subrayado animado */
+.link p {
+  position: relative;
+  display: inline-block;
+  font-family: "GideonRoman";
+  font-size: 25px;
+  color: #053265;
+  cursor: pointer;
+}
+
+/* Línea decorativa debajo del texto que se expande en hover */
+.link p::after {
+  content: '';
+  position: absolute;
+  left: 50%;
+  bottom: -3px;
+  width: 0%;
+  height: 2px;
+  background-color: currentColor;
+  transform: translateX(-50%);
+  transform-origin: center;
+  transition: width 0.4s ease;
+}
+
+.link:hover p::after {
+  width: 100%;
+}
+
+/* --------------------------------------------
+   DESCRIPCIÓN DE LA SECCIÓN
+-------------------------------------------- */
+.description {
+  width: 100%;
+  font-size: 30px;
+  font-family: Roboto;
+  text-align: justify; 
+}
+
+/* --------------------------------------------
+   CONTENEDORES DE ELEMENTOS INTERACTIVOS
+-------------------------------------------- */
+
+/* Contenedor general de los elementos */
+.elements {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 4rem;
+}
+
+/* Cada columna de elementos interactivos */
+.elementsSection {
+  display: flex;
+  flex-direction: column;
+  gap: 4rem;
+
+  flex: 1 1 45%; 
+  max-width: 590px; 
+}
+
+/* --------------------------------------------
+   RESPONSIVIDAD PARA PANTALLAS PEQUEÑAS
+-------------------------------------------- */
+@media (max-width: 768px) {
+  .elementsSection {
+    flex: 1 1 100%; 
+    max-width: none;
+  }
+  .dateLink{
+    flex-direction: column;
+    align-items: center;
+    justify-content: start;
+    gap: 10px;
+
+  }
+  .date{
+    transform: scale(0.9);
+  }
+
+}
+@media (max-width: 480px) {
+  
+}
+

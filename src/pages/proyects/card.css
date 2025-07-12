@@ -1,0 +1,191 @@
+
+/* =============================
+   Contenedor Principal de la Tarjeta
+   ============================= */
+
+.card-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    perspective: 1000px; /* Efecto 3D para rotación */
+    width: 470px;
+    height: 750px;
+}
+
+/* =============================
+   Tarjeta (rotación y estilo base)
+   ============================= */
+
+.card {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    transition: transform 0.8s;
+    transform-style: preserve-3d;
+}
+
+/* Efecto hover (solo si la tarjeta tiene clase .card-hover) */
+.card-container:hover .card.card-hover{
+    transform: rotateY(180deg);
+}
+
+
+/* Rotación forzada con estado bloqueado */
+.card.card-locked{
+    transform: rotateY(180deg);
+}
+
+/* =============================
+   Caras de la Tarjeta
+   ============================= */
+
+.card-front, .card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-sizing: border-box;
+    padding: 20px;
+    cursor: pointer;
+
+}
+
+
+.card-front {
+    background-color: #272727;
+    border: solid 2px #EFE9D3;
+    font-size: 40px;
+    font-family: Roboto;
+}
+
+.card-back {
+    background-color: #EFE9D3;
+    font-family: Roboto, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI','Helvetica Neue', sans-serif;
+    color: black;
+    font-size: 20px;
+    transform: rotateY(180deg);
+    flex-direction: column;
+    justify-content: space-evenly;
+    text-align: center;
+}
+.card-back h4{
+    font-size: 25px;
+}
+
+/* =============================
+   Tecnologías (general)
+   ============================= */
+.card-technologies{
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    max-width: 440px;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+/* Tecnologías (diseño especial para "Telegram Bot") */
+.card-technologies-telgram-bot{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(3, auto);
+    width: auto;
+    max-width: 440px;
+    height: auto;
+    justify-items: center;
+}
+
+
+/* Estilo de cada etiqueta de tecnología */
+.card-name-technology {
+    width: 110px;
+    height: 35px;
+    border-radius: 15px;
+    border: 1px solid black;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background 0.5s ease;
+}
+
+.card-name-technology p {
+    color: white;
+    margin: 0;
+    font-size: 14px;
+}
+
+/* =============================
+   Colores personalizados por tecnología
+   ============================= */
+
+.bg-Python {
+    background: linear-gradient(to right, #2F3FA7, #D8A902);
+}
+.bg-Python:hover {
+    background: linear-gradient(to left, #2F3FA7, #D8A902);
+}
+.bg-AWS {
+    background: linear-gradient(to right, #FB9600, #000F6D);
+}
+.bg-AWS:hover {
+    background: linear-gradient(to left, #FB9600, #000F6D);
+}
+.bg-FastAPI {
+    background: linear-gradient(to right, #049688, #01302C);
+}
+.bg-FastAPI:hover {
+    background: linear-gradient(to left, #049688, #01302C);
+}
+.bg-MySQL{
+    background: linear-gradient(to right, #00618A, #7C7C7C);
+}
+.bg-MySQL:hover {
+    background: linear-gradient(to left, #00618A, #7C7C7C);
+}
+.bg-Reflex {
+    background: linear-gradient(to right, #E5D7FF, #270568);
+}
+.bg-Reflex:hover {
+    background: linear-gradient(to left, #E5D7FF, #270568);
+}
+.bg-MongoDB {
+    background: linear-gradient(to right, #439934, #163311);
+}
+.bg-MongoDB:hover {
+    background: linear-gradient(to left, #439934, #163311);
+}
+
+/* =============================
+   Responsividad (media queries)
+   ============================= */
+@media (max-width: 768px) {
+    .card-container {
+        width: 350px;
+    }
+    .card-back{
+        font-size: 15px;
+    }
+    .card-back img{
+        transform: scale(0.7);
+    }
+
+}
+
+@media (max-width: 480px) {
+    .card-container {
+        width: 350px;
+        height: 630px;
+    }
+    .card-back{
+        font-size: 15px;
+    }
+    .card-back img{
+        transform: scale(0.7);
+    }
+}

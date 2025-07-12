@@ -1,0 +1,110 @@
+
+/* ============================================================
+   Estilos Generales del Contenedor Principal de la Sección Proyectos
+   ============================================================ */
+
+.proyectspage-wrapper {
+  position: relative;
+  height: auto;
+  width: 100%;
+  min-height: 100vh;
+  background-color: #272727;
+  padding-bottom: 100px;
+}
+
+/* ============================================================
+   Contenido Interno de la Sección
+   ============================================================ */
+
+.proyectspage-content{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: auto;
+    gap: 50px;
+    max-width: 1280px;
+    margin: 0 auto;              
+    padding: 0 2rem 2rem;         
+    text-align: center;
+    color: white;
+}
+
+/* ============================================================
+   Título Principal
+   ============================================================ */
+
+.proyectspage-title{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    margin-top: 100px;
+}
+
+.proyectspage-content h2{
+    font-family: Roboto;
+    font-weight: 100;
+    font-size: 40px;
+    text-decoration: underline;
+    text-decoration-thickness: 2px;
+    text-underline-offset: 10px;
+}
+
+/* ============================================================
+   Contenedor de Tarjetas
+   ============================================================ */
+
+.section-cards{
+    display: flex;
+    flex-direction: column;
+    margin-top: 50PX;
+    justify-content: center;
+    align-items: center;
+    gap: 100px;
+    width: 100%;
+    height: auto;
+}
+
+/* Fila de Tarjetas (para tarjetas tipo Card) */
+.section-cards-row{
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    height: auto;
+    justify-content: space-evenly;
+    align-items: center;
+
+}
+
+/* ============================================================
+   Responsividad
+   ============================================================ */
+
+@media (max-width: 768px) {
+    .section-cards-row{
+        flex-direction: column;
+        gap: 50px;
+    }
+    
+    .section-cards{
+        gap: 250px;
+    }
+
+    .proyectspage-wrapper {
+        padding-bottom: 300px;
+    }
+
+    .proyectspage-content{
+        padding: 0;
+        width: 100%;
+    }
+
+}
+
+@media (max-width: 480px) {
+    .section-cards-row{
+        flex-direction: column;
+    }
+}

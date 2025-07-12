@@ -1,0 +1,168 @@
+
+/* ============================================================
+   CONTENEDOR PRINCIPAL DE INFORMACIÓN PERSONAL
+   ============================================================ */
+
+.aboutmepage-personalinformation{
+    display: flex;
+    flex-direction: row;
+    gap: 50px;
+}
+
+/* Imagen de perfil */
+.aboutmepage-personalinformation img{
+    width: 400px;
+    height: 514px;
+    border-radius: 35px;
+}
+
+/* ============================================================
+   DESCRIPCIÓN PERSONAL (Nombre, presentación, botón)
+   ============================================================ */
+
+.aboutmepage-description{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: start;
+    width: 504px;
+    height: 514px;
+}
+
+.aboutmepage-description h3{
+    font-size: 45px;
+    font-weight: 100;
+    font-family: Roboto;
+    margin: 0;
+}
+
+/* Nombre personalizado con Calistonga */
+.aboutmepage-description h3 span{
+    font-family: "Calistonga";
+}
+
+.aboutmepage-description p{
+    font-size: 30px;
+    font-family: Roboto;
+    text-align: left;
+    margin: 0;
+}
+
+/* ============================================================
+   ÍCONOS DE REDES SOCIALES
+   ============================================================ */
+
+.aboutmepage-socailIcons{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 30px;
+}
+
+.aboutmepage-socailIcons > * {
+    transition: transform 0.3s ease;
+    cursor: pointer;
+}
+
+.aboutmepage-socailIcons > *:hover {
+    transform: scale(1.2);
+    animation: bounceUpDown 0.6s ease-in-out infinite;
+}
+
+
+/* Efecto hover: agrandar y rebotar */
+@keyframes bounceUpDown {
+  0%, 100% {
+    transform: translateY(0) scale(1.2);
+  }
+  50% {
+    transform: translateY(-8px) scale(1.2);
+  }
+}
+
+/* ============================================================
+   BOTÓN DE CURRÍCULUM
+   ============================================================ */
+
+.oscuro-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+
+    width: 280px;
+    height: 70px;
+
+    font-size: 30px;
+    font-family: Roboto, sans-serif;
+    font-weight: 600;
+
+    background-color: #2f2f2f;
+    color: #efe9d3;
+    border: none;
+    border-radius: 15px;
+
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-decoration: none;
+}
+
+/* Efecto hover del botón */
+.oscuro-button:hover {
+    background-color: #efe9d3;
+    color: #2f2f2f;
+    border: 2px solid #2f2f2f;
+    transform: scale(1.03);
+}
+
+/* ============================================================
+   CONTENEDOR FLEXIBLE PARA ADAPTABILIDAD
+   ============================================================ */
+
+.container-responsive{
+    display: flex;
+    flex-direction: row;
+    gap: 50px;
+}
+
+
+/* ============================================================
+   MEDIA QUERIES (Tablet y Móvil)
+   ============================================================ */
+
+@media (max-width: 768px) {
+    .aboutmepage-personalinformation{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+    .aboutmepage-personalinformation img{
+        width: 100%;
+    }
+    .aboutmepage-description{
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+    }
+    .aboutmepage-description h3{
+        font-size: 35px;
+        text-align: center;
+    }
+
+    .aboutmepage-description h3 span{
+        text-align: center;
+        font-family: "Calistonga";
+    }
+
+    .aboutmepage-description p{
+        text-align: justify;
+        font-size: 25px;
+    }
+    .aboutmepage-socailIcons{
+        transform: scale(0.9);
+    }
+}
+
+@media (max-width: 480px) {
+
+}

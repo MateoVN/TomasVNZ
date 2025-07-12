@@ -1,0 +1,218 @@
+
+/* --------------------------------------------
+   FUENTE Y RESET
+-------------------------------------------- */
+.footer-wrapper{
+    position: relative;
+    height: auto;
+    width: 100%;
+    background-color: #EFE9D3;
+}
+.footer-container{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    min-width: 100%;
+    padding-bottom: 20px;
+
+}
+.footer-container a {
+    text-decoration: none;
+    color: inherit;
+    cursor: pointer;
+}
+.fleft-container h3{
+    font-family: 'Times New Roman', Times, serif;
+}
+
+/* ------------------------------
+   MENÚ DE NAVEGACIÓN
+------------------------------- */
+
+.fmenu-container {
+    display: flex;
+    flex-direction: row;
+    font-size: 20px;
+    font-family: system-ui, Roboto, sans-serif;
+    font-weight: 500;
+}
+
+.fmenu-container ul {
+  display: flex;
+  flex-direction: row;
+  gap: 50px;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.fmenu-container ul li {
+  transition: transform 0.2s ease;
+}
+
+.fmenu-container ul li:hover {
+  transform: scale(1.1);
+  text-decoration: underline;
+  text-decoration-thickness: 2px;
+  text-underline-offset: 10px;
+  cursor: pointer;
+  text-shadow: 0 0 8px rgba(255, 255, 255, 0.5);
+}
+/* ------------------------------
+   ESTRUCTURA RESPONSIVE GENERAL
+------------------------------- */
+.fleft-container {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+.fleft-container:hover a{
+  text-decoration: underline;
+  text-underline-offset: 5px;
+  text-decoration-thickness: 2px;
+}
+
+/* ------------------------------
+   BOTÓN HAMBURGUESA
+------------------------------- */
+.fhamburger-btn {
+  display: none; 
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 10px;
+}
+
+.fhamburger-icon {
+  width: 30px;
+  height: 3px;
+  background-color: black;
+  position: relative;
+  display: flex;
+  transition: all 0.3s ease;
+}
+
+.fhamburger-icon::before,
+.fhamburger-icon::after {
+  content: "";
+  position: absolute;
+  width: 30px;
+  height: 3px;
+  background-color: black;
+  transition: all 0.3s ease;
+}
+
+.fhamburger-icon::before {
+  top: -8px;
+}
+
+.fhamburger-icon::after {
+  top: 8px;
+}
+/* ------------------------------
+   RESPONSIVE: MENÚ MOBILE
+------------------------------- */
+@media (max-width: 768px) {
+  .fhamburger-btn {
+    display: block;
+  }
+   .fmenu-container {
+    position: fixed;
+    bottom: 80px; /* está bien */
+    left: 0;
+    right: 0;
+    background-color: #EFE9D3;
+    display: none;
+    flex-direction: column;
+    z-index: 999;
+    animation: slideUp 0.4s ease forwards; /* <-- nueva animación */
+    box-shadow: 0 -10px 50px rgba(0, 0, 0, 0.2); /* sombra hacia arriba opcional */
+    transform-origin: bottom center; /* mejora visual al expandirse hacia arriba */
+}
+
+  .fmenu-container.fmenu-open {
+    display: flex;
+    width: 100%;
+  }
+
+  .fmenu-open {
+    display: none;
+    position: absolute;
+  }
+
+  .fmenu-container ul {
+    flex-direction: column;
+    gap: 20px;
+  }
+  
+  .fmenu-container ul li {
+    border-top: 1px solid rgba(0, 0, 0, 0.274);
+    padding-top: 10px;
+    opacity: 0;
+    transform: translateY(10px);
+    animation: fadeInItem 0.3s ease forwards;
+  }
+
+  .fmenu-container ul li:last-child {
+    border-bottom: 1px solid rgba(0, 0, 0, 0.39);
+    padding-bottom: 20px;
+}
+
+  
+  /* Animación secuencial en cascada */
+  .fmenu-container ul li:nth-child(4) { animation-delay: 0.1s; }
+  .fmenu-container ul li:nth-child(3) { animation-delay: 0.2s; }
+  .fmenu-container ul li:nth-child(2) { animation-delay: 0.3s; }
+  .fmenu-container ul li:nth-child(1) { animation-delay: 0.4s; }
+
+   @keyframes fadeInItem {
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes slideUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+  .footer-container {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 0 2rem;
+    gap: 10px;
+  }
+
+  .fleft-container {
+    width: 100%;
+    justify-content: space-between;
+  }
+}
+/* --------------------------------------------
+    Recomendación para hacerlo responsivo
+-------------------------------------------- */
+@media (max-width: 768px) {
+  .footer-container {
+    flex-direction: column;
+    padding: 0;
+    gap: 0px;
+    text-align: center;
+  }
+
+  .fmenu-container ul {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .fleft-container{
+    justify-content: space-evenly;
+    gap: 20px;
+  }
+}

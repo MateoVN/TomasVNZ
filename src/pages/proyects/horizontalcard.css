@@ -1,0 +1,197 @@
+
+/* =============================
+   Contenedor Principal de la Tarjeta Horizontal
+   ============================= */
+
+.hcard-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    perspective: 1000px;
+    width: 1055px;
+    height: 520px
+}
+
+/* =============================
+   Estilos Base de la Tarjeta
+   ============================= */
+
+.hcard {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    transition: transform 0.8s;
+    transform-style: preserve-3d;
+}
+
+/* Efecto Hover y Rotación Forzada */
+.hcard-container:hover .hcard.hcard-hover {
+    transform: rotateY(180deg);
+}
+
+.hcard.hcard-locked {
+    transform: rotateY(180deg);
+}
+
+/* =============================
+   Caras de la Tarjeta
+   ============================= */
+
+.hcard-front, .hcard-back  {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-sizing: border-box;
+    padding: 20px;
+    cursor: pointer;
+}
+
+.hcard-front {
+    background-color: #272727;
+    border: solid 2px #EFE9D3;
+    font-size: 40px;
+    font-family: Roboto;
+}
+
+.hcard-back {
+    background-color: #EFE9D3;
+    font-family: Roboto, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI','Helvetica Neue', sans-serif;
+    color: black;
+    font-size: 20px;
+    transform: rotateY(180deg);
+    flex-direction: row;
+    justify-content: space-evenly;
+    text-align: justify;
+}
+
+.hcard-back h4{
+    font-size: 25px;
+}
+
+/* =============================
+   Contenido de la Parte Trasera
+   ============================= */
+
+.hcard-back-sections{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 50px;
+}
+
+/* =============================
+   Tecnologías
+   ============================= */
+
+.hcard-technologies{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 10px;
+    max-width: 440px;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+/* Estilo de cada etiqueta de tecnología */
+.hcard-name-technology {
+    width: 110px;
+    height: 35px;
+    background: linear-gradient(to right, #2F3FA7, #D8A902);
+    border-radius: 15px;
+    border: 1px solid black;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background 0.5s ease;
+}
+
+.hcard-name-technology p {
+    color: white;
+    margin: 0;
+    font-size: 14px;
+}
+
+/* =============================
+   Colores por Tecnología (Reutilizables)
+   ============================= */
+
+.hcard-name-technology:hover {
+    background: linear-gradient(to left, #2F3FA7, #D8A902);
+}
+
+.bg-Python {
+    background: linear-gradient(to right, #2F3FA7, #D8A902);
+}
+.bg-Python:hover {
+    background: linear-gradient(to left, #2F3FA7, #D8A902);
+}
+.bg-AWS {
+    background: linear-gradient(to right, #FB9600, #000F6D);
+}
+.bg-AWS:hover {
+    background: linear-gradient(to left, #FB9600, #000F6D);
+}
+.bg-FastAPI {
+    background: linear-gradient(to right, #049688, #01302C);
+}
+.bg-FastAPI:hover {
+    background: linear-gradient(to left, #049688, #01302C);
+}
+.bg-MySQL{
+    background: linear-gradient(to right, #00618A, #7C7C7C);
+}
+.bg-MySQL:hover {
+    background: linear-gradient(to left, #00618A, #7C7C7C);
+}
+.bg-Reflex {
+    background: linear-gradient(to right, #E5D7FF, #270568);
+}
+.bg-Reflex:hover {
+    background: linear-gradient(to left, #E5D7FF, #270568);
+}
+.bg-MongoDB {
+    background: linear-gradient(to right, #439934, #163311);
+}
+.bg-MongoDB:hover {
+    background: linear-gradient(to left, #439934, #163311);
+}
+
+/* =============================
+   Media Queries (Responsivo)
+   ============================= */
+
+@media (max-width: 768px) {
+    .hcard-container{
+        width: 100%;
+        box-sizing: border-box;
+    }
+    .hcard{
+        width: 350px;
+        height: 880px;
+    }
+    .hcard-back{
+        flex-direction: column;
+        padding: 20px;
+        gap: 0;
+        justify-content: start;
+    }
+    .hcard-back img{
+        transform: scale(0.8);
+    }
+    .hcard-back-sections{
+        font-size: 15px;
+        padding: 0;
+    }
+}
+
+@media (max-width: 480px) {
+
+}

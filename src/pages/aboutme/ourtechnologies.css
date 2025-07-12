@@ -1,0 +1,153 @@
+
+/* ============================================================
+   CONTENEDOR PRINCIPAL DE TECNOLOGÍAS
+   ============================================================ */
+
+.aboutmepage-our-technologies{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    width: 100%;
+    gap: 50px;
+    padding-top: 100px;
+}
+
+/* ============================================================
+   CONTENEDOR DE CADA BLOQUE DE TECNOLOGÍAS
+   ============================================================ */
+
+.aboutmepage-technologies-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #2f2f2f;
+    border-radius: 35px;
+    width: 628px;
+    height: 607px;
+    gap: 50px;
+}
+
+/* ============================================================
+   TÍTULO DE CADA SECCIÓN
+   ============================================================ */
+
+.technologies-title{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 80px;
+    width: 360px;
+    border: solid 2px white;
+    border-radius: 15px;
+    color: white;
+}
+.technologies-title h3{
+    margin: 0;
+    font-size: 30px;
+    font-weight: 600;
+    font-family: Roboto;
+    
+}
+/* ============================================================
+   TECNOLOGÍAS EN LAS QUE SE ESPECIALIZA
+   ============================================================ */
+
+.specialized-technologies{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    gap: 30px;
+    padding: 30px;
+    border: solid 2px white;
+    border-radius: 15px;
+}
+
+.technology-icon-name{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    color: white;
+    font-family: Roboto;
+    font-size: 25px;
+    gap: 5px;
+    text-decoration: none;
+
+}
+
+/* ============================================================
+   TECNOLOGÍAS CON CONOCIMIENTO BÁSICO
+   ============================================================ */
+
+.basic-knowledge-technologies{
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+    border: solid 2px white;
+    border-radius: 15px;
+    padding: 40px;
+}
+.basic-knowledge-technologies-section{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+/* ============================================================
+   ESTILOS DE LOS ÍCONOS DE TECNOLOGÍAS (GENERAL)
+   ============================================================ */
+
+.technology-icon-name {
+    transition: transform 0.3s ease;
+    cursor: pointer;
+}
+
+.technology-icon-name:hover {
+    transform: scale(1.2);
+}
+
+/* ============================================================
+   MEDIA QUERIES - RESPONSIVE
+   ============================================================ */
+
+@media (max-width: 768px) {
+    .aboutmepage-our-technologies{
+        flex-direction: column;
+        padding-top: 0;
+    }
+    .aboutmepage-technologies-container{
+        width: 100%;
+        height: 750px;
+    }
+    .technologies-title{
+        width: 90%;
+    }
+    .technologies-title h3{
+        font-size: 25px;
+    }
+    .specialized-technologies {
+        grid-template-columns: repeat(2, auto);
+        gap: 0;
+        margin: 0;
+    }
+    .technology-icon-name{
+        align-items: center;
+        transform: scale(0.9);
+    }
+    .basic-knowledge-technologies{
+        width:350px;
+        justify-content: center;
+        align-items: center;
+        gap:0;
+        padding: 0;
+        margin: 0;
+    }
+    .basic-knowledge-technologies .technology-icon-name{
+        transform: scale(0.8);
+    }
+}
+
+@media (max-width: 480px) {
+
+}
