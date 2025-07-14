@@ -170,7 +170,7 @@
 
 @media (max-width:1024px) {
     .hcard-container {
-        transform: scale(0.8);
+        transform: scale(0.7);
     }
 }
 
