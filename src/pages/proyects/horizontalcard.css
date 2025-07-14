@@ -176,6 +176,7 @@
 
 @media (max-width: 768px) {
     .hcard-container{
+        transform: scale(1);
         width: 100%;
         box-sizing: border-box;
     }

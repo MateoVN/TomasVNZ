@@ -205,6 +205,10 @@
         align-items: center;
         flex-direction: column;
     }
+    .contact-form-description{
+        text-align: center;
+        align-items: center;
+    }
 }
 
 @media (max-width:768px){

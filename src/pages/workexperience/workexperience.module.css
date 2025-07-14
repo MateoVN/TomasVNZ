@@ -165,7 +165,8 @@
 -------------------------------------------- */
 @media (max-width: 1024px){
   .link p {
-    font-size: 20px;
+    gap: 5px;
+    font-size: 17px;
   }
 }
 @media (max-width: 768px) {
