@@ -168,6 +168,12 @@
    Media Queries (Responsivo)
    ============================= */
 
+@media (max-width:1024px) {
+    .hcard-container {
+        transform: scale(0.8);
+    }
+}
+
 @media (max-width: 768px) {
     .hcard-container{
         width: 100%;

@@ -110,8 +110,16 @@
 /* ============================================================
    MEDIA QUERIES - RESPONSIVE
    ============================================================ */
+@media (max-width:1024px) {
+
+    .aboutmepage-our-technologies{
+        flex-direction: column;
+        align-items: center;
+    }
+}
 
 @media (max-width: 768px) {
+
     .aboutmepage-our-technologies{
         flex-direction: column;
         padding-top: 0;

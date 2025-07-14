@@ -164,6 +164,13 @@
 /* =============================
    Responsividad (media queries)
    ============================= */
+
+@media (max-width:1024px) {
+    .card-container {
+        transform: scale(0.9);
+    }
+}
+
 @media (max-width: 768px) {
     .card-container {
         width: 350px;

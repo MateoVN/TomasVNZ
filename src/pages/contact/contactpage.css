@@ -200,6 +200,13 @@
    MEDIA QUERIES - TABLET
    ============================================================ */
 
+@media (max-width:1024px){
+    .contact-form-section{
+        align-items: center;
+        flex-direction: column;
+    }
+}
+
 @media (max-width:768px){
     .contact-form-section{
         display: flex;
@@ -211,18 +218,23 @@
         gap: 10px;
         padding-bottom: 50px;
         align-items: center;
+        justify-content: center;
     }
     .input-label-container{
         display: flex;
         flex-direction: column;
-        width: 80%;
+        width: 100%;
     }
     .contact-form input{
-        width: 90%;
+        width: 100%;
         font-size: 20px;
+        padding-left: 0;
+        padding-right: 0;
     }
     #message{
-        width: 92%;
+        width: 100%;
+        padding-left: 0;
+        padding-right: 0;
         font-size: 20px;
     }
 

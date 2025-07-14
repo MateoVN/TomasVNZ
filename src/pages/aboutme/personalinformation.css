@@ -129,12 +129,17 @@
 /* ============================================================
    MEDIA QUERIES (Tablet y Móvil)
    ============================================================ */
-
+@media (max-width: 1024px) {
+    .aboutmepage-personalinformation{
+        transform: scale(0.8);
+    }
+}
 @media (max-width: 768px) {
     .aboutmepage-personalinformation{
         display: flex;
         flex-direction: column;
         justify-content: center;
+        transform: scale(1);
     }
     .aboutmepage-personalinformation img{
         width: 100%;

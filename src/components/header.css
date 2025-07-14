@@ -207,6 +207,90 @@
 /* ------------------------------
    RESPONSIVE: MENÚ MOBILE
 ------------------------------- */
+
+@media (max-width: 1024px){
+ .hamburger-btn {
+    display: block;
+    margin-right: 50px;
+  }
+
+   .menu-container {
+    position: fixed;
+    top: 150px; 
+    right: 0;
+    left: 0;
+    background-color: #2F2F2F;
+    display: none;   
+    flex-direction: column;
+    z-index: 999;
+    animation: slideDown 0.4s ease forwards;
+    box-shadow: 0 50px 100px rgba(0, 0, 0, 0.6);
+  }
+
+  .menu-container.menu-open {
+    display: flex;
+    width: 100%;
+  }
+   .menu-container.menu-open {
+    display: flex;
+    width: 100%;
+  }
+
+  .menu-container ul {
+    flex-direction: column;
+    gap: 20px;
+  }
+  
+  .menu-container ul li {
+    border-top: 1px solid white;
+    padding-top: 10px;
+    opacity: 0;
+    transform: translateY(-10px);
+    animation: fadeInItem 0.3s ease forwards;
+  }
+
+  .menu-container ul li:last-child {
+  border-bottom: 1px solid white;
+  padding-bottom: 20px;
+}
+
+  
+  /* Animación secuencial en cascada */
+  .menu-container ul li:nth-child(1) { animation-delay: 0.1s; }
+  .menu-container ul li:nth-child(2) { animation-delay: 0.2s; }
+  .menu-container ul li:nth-child(3) { animation-delay: 0.3s; }
+  .menu-container ul li:nth-child(4) { animation-delay: 0.4s; }
+
+   @keyframes fadeInItem {
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes slideDown {
+    from {
+      opacity: 0;
+      transform: translateY(-20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  .header-container {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 0 2rem;
+    gap: 10px;
+  }
+
+  .left-container {
+    width: 100%;
+    justify-content: space-between;
+  }
+}
 @media (max-width: 768px) {
   .hamburger-btn {
     display: block;

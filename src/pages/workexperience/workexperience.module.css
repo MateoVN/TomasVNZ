@@ -161,8 +161,13 @@
 }
 
 /* --------------------------------------------
-   RESPONSIVIDAD PARA PANTALLAS PEQUEÑAS
+   RESPONSIVIDAD 
 -------------------------------------------- */
+@media (max-width: 1024px){
+  .link p {
+    font-size: 20px;
+  }
+}
 @media (max-width: 768px) {
   .elementsSection {
     flex: 1 1 100%; 
@@ -181,6 +186,6 @@
 
 }
 @media (max-width: 480px) {
-  
+
 }
 
